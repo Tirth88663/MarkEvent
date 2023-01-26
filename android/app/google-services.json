@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "986519904497",
+    "project_id": "markevent-7c170",
+    "storage_bucket": "markevent-7c170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986519904497:android:102a42e03a7f28d0490950",
+        "android_client_info": {
+          "package_name": "com.example.markevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986519904497-5ahruqcoc8i7puq1mbof9l433s2mcpeo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.markevent",
+            "certificate_hash": "421705ac5a8845c983b5fc573204cfb920ca0a4b"
+          }
+        },
+        {
+          "client_id": "986519904497-ehgmsrdgc90sk3eicp3jbh8v215q4eos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxHc5YNWMbZC3O92cHhi7NCQqYxUsNjF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986519904497-ehgmsrdgc90sk3eicp3jbh8v215q4eos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
