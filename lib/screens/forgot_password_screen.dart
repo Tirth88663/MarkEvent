@@ -97,7 +97,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 //sent button
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.green,
                     minimumSize: Size.fromHeight(
                         MediaQuery.of(context).size.height * 0.08),
                   ),
@@ -108,6 +108,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     style: GoogleFonts.poppins(
                       textStyle: const TextStyle(
                         fontSize: 20,
+                        color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
