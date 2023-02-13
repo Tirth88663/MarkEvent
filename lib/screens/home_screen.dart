@@ -1,7 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:markevent/screens/login_screen.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:markevent/screens/nav_screens/home_screen2.dart';
+import 'package:markevent/screens/nav_screens/profile_screen.dart';
+import 'package:markevent/screens/nav_screens/search_screen.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,44 +15,50 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  var pagedata = [homescreen2(), Search() , Profile()];
+  int selectedicon = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            label: "Home",
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: "Events",
-            icon: Icon(Icons.event_note),
-          ),
-          BottomNavigationBarItem(
-            label: "Profile",
-            icon: Icon(Icons.person),
-          ),
-        ],
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            logout(context);
-          },
-          child: Text(
-            "Logout",
-            style: GoogleFonts.poppins(),
+      bottomNavigationBar: Container(
+        color: Colors.greenAccent,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 20),
+          child: GNav(
+            padding: EdgeInsets.all(12),
+            gap: 0,
+            backgroundColor: Colors.greenAccent,
+            activeColor: Colors.black,
+            tabBackgroundColor: Colors.white54,
+            tabs: [ GButton(
+              icon: Icons.home,
+              text: 'Home',
+            ),
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
+              ),
+              GButton(
+                icon: Icons.account_circle,
+                text: 'Profile',
+              ),
+            ],
+            onTabChange: (index){
+              setState(() {
+                selectedicon = index;
+              });
+            },
           ),
         ),
+      ) ,
+
+
+
+      body: Center(
+        child: pagedata[selectedicon],
       ),
     );
-  }
-
-  Future<void> logout(BuildContext context) async {
-    await FirebaseAuth.instance.signOut();
-
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 }
