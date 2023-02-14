@@ -4,8 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:markevent/screens/home_screen.dart';
 
+import 'first_screen.dart';
 import 'login_screen.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
@@ -70,7 +70,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return isEmailVerified
-        ? const HomeScreen()
+        ? const FirstScreen()
         : SafeArea(
             child: Scaffold(
               body: SingleChildScrollView(
